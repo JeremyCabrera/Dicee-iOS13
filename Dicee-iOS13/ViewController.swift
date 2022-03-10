@@ -14,29 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView2: UIImageView!
     
     var leftDiceNumber = 1
-    var rightDiceNumber = 1
+    var rightDiceNumber = 5
     
    
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
         
-       
-        print("leftDiceNumber at beginning = \(leftDiceNumber)")
-        diceImageView1.image = [  #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")] [leftDiceNumber]
+        //Since there is no variable that will be changed use the "let" command instead
         
-        leftDiceNumber = leftDiceNumber + 1
-       
-        print("leftDiceNumber at the end = \(leftDiceNumber)")
+        let diceArray = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
         
-       
-        print("rightDiceNumber at beginning = \(rightDiceNumber)")
-        diceImageView2.image = [  #imageLiteral(resourceName: "DiceSix"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceOne")] [rightDiceNumber]
+        //Int means to initialize so in this code we are initializing a random output
         
-        
-        rightDiceNumber = rightDiceNumber + 1
-       
-        print("rightDiceNumber at the end = \(rightDiceNumber)")
-        
+        diceImageView1.image = diceArray [Int.random(in: 0...5)]
+        diceImageView2.image = diceArray [Int.random(in: 0...5)]
         
         
 }
